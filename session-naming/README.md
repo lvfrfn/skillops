@@ -2,16 +2,6 @@
 
 Give the current session a searchable title based on its specific topic, useful scope, and intent. Use it once the task is clear, and revisit the title when new evidence materially clarifies the subject.
 
-## Install
-
-Install for Codex from your target project using the preferred `npx` method:
-
-```bash
-npx skills add lvfrfn/skillops --skill session-naming -a codex
-```
-
-Add `-g` for user-wide installation. See the [shared installation instructions](https://github.com/lvfrfn/skillops/blob/main/README.md#install-in-codex) for prerequisites and the manual fallback.
-
 ## Use
 
 ```text

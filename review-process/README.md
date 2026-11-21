@@ -2,16 +2,6 @@
 
 Review or re-review pull requests and merge requests using scoped analysis, behavioral verification, and actionable findings. Use it for code, architecture, and documentation reviews where conclusions need evidence and clear verification limits.
 
-## Install
-
-Install for Codex from your target project using the preferred `npx` method:
-
-```bash
-npx skills add lvfrfn/skillops --skill review-process -a codex
-```
-
-Add `-g` for user-wide installation. See the [shared installation instructions](https://github.com/lvfrfn/skillops/blob/main/README.md#install-in-codex) for prerequisites and the manual fallback.
-
 ## Use
 
 Provide the PR/MR reference or local branch and comparison base, your concerns, and whether verification should remain static or include permitted execution:

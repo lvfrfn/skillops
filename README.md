@@ -14,6 +14,8 @@ Codex is the primary target. Other agents may use the instructions if they suppo
 
 ## Install in Codex
 
+Installation and updates are user-directed setup operations. Review the selected skill's source before installing it. The installed skills require no automatic download, installation, update, or execution of remote skill material during use; their README setup instructions are not runtime workflow steps.
+
 ### npx (preferred)
 
 Requires Node.js 22.20 or later. Run from your target project to choose which skills to install for Codex:
