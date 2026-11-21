@@ -1,22 +1,22 @@
 ---
-name: codex-plan-workflow
-description: Guide Codex Plan mode through technical discussions, research, and decision-making before creating implementation plans. Default to discussion until the user requests or clearly confirms readiness to plan. Then produce a decision-complete execution handoff that preserves agreed decisions, rationale, context, constraints, and verification requirements for agents without conversation history. Use for DevOps, infrastructure, configuration, and software engineering tasks.
+name: agent-plan-workflow
+description: Guide coding agents through technical discussions, research, and decision-making before creating implementation plans. Default to discussion until the user requests or clearly confirms readiness to plan. Then produce a decision-complete execution handoff that preserves agreed decisions, rationale, context, constraints, and verification requirements for agents without conversation history. Use for DevOps, infrastructure, configuration, and software engineering tasks.
 ---
 
-# Codex Plan Workflow
+# Agent Plan Workflow
 
-Complement Codex's native Plan mode rather than replacing it. Support technical discussion before planning, then produce a compact, independently executable handoff that preserves the context, constraints, and reasons behind the agreed approach. This applies especially to infrastructure, operations, configuration, and code changes.
+Complement the host agent's native planning workflow and follow its governing mode and output rules. Support technical discussion before planning, then produce a compact, independently executable handoff that preserves the context, constraints, and reasons behind the agreed approach. This applies especially to infrastructure, operations, configuration, and code changes.
 
 ## Discussion first; plan on readiness
 
 - If the user explicitly requests an execution plan, enter plan-creation work immediately, but resolve consequential unknowns before finalizing it.
-- Otherwise, **default to discussion and research**. Address the user's actual questions; do not ask whether they want a plan merely because Codex is in Plan mode.
-- During discussion, inspect current behavior, investigate feasibility, compare alternatives, challenge assumptions, and explain tradeoffs. Illustrative implementation sequences are allowed; a finalized execution plan or `<proposed_plan>` is not.
+- Otherwise, **default to discussion and research**. Address the user's actual questions; do not ask whether they want a plan merely because the agent is in a planning mode.
+- During discussion, inspect current behavior, investigate feasibility, compare alternatives, challenge assumptions, and explain tradeoffs. Illustrative implementation sequences are allowed; a finalized execution plan is not.
 - Do not infer permission to finalize a plan from sufficient information, the agent's confidence, or casual agreement with one technical point.
 - Move to plan creation when the user requests it or clearly confirms both the intended approach and readiness to plan (for example, "let's turn this into a plan"). If readiness is unclear after the key decisions are settled, ask **one direct transition question**, then continue according to the answer.
 - If the user reopens a decision during plan refinement, discuss that decision and update the whole plan only when the resulting approach is settled. Do not repeatedly ask about intent once it is established.
 
-This controls the **deliverable**, not Codex permissions. Plan mode remains non-mutating; neither discussion nor a plan authorizes implementation, deployment, commits, or other changes.
+This controls the **deliverable**, not the host agent's permissions. Respect any native planning-mode restrictions. Without a native planning mode, keep discussion and plan creation non-mutating. Neither discussion nor a plan authorizes implementation, deployment, commits, or other changes.
 
 ## Prepare the handoff
 
@@ -64,7 +64,7 @@ Identify material blockers: missing authorization, unavailable required input, c
 
 ## Publish and refine
 
-- In Codex Plan mode, use the native `<proposed_plan>` format **only** for a requested or clearly authorized, decision-complete implementation handoff. Never use it for research or exploratory discussion.
+- Follow the host agent's required plan format. In Codex Plan mode, use the native `<proposed_plan>` format **only** for a requested or clearly authorized, decision-complete implementation handoff. For other agents, use their required format, or plain Markdown when none is specified. Never present a finalized plan for research or exploratory discussion.
 - Respect the user's requested output location and current mode permissions. Do not force files, worktrees, commits, subagents, TDD, or implementation.
 - Keep the plan proportional to the task. Prefer a short precise handoff over repeated background, exhaustive path inventories, and tests that prove nothing.
 - When revising an already published plan, return a **complete replacement** with superseded decisions removed from the tasks and checks. Do not publish fragments that require the executor to reconcile multiple versions.
